@@ -1,0 +1,123 @@
+.onboardingWizard {
+    width: 100vw;
+    height: 100vh;
+}
+
+.headerContainer {
+    height: 100px;
+    width: 100vw;
+    text-align: center;
+    padding: 30px;
+    border-bottom: 1px solid #000;
+    box-sizing: border-box;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.stepContainer {
+    width: 100%;
+    height: calc(100% - 200px);
+    padding-top: 80px;
+    padding-bottom: 80px;
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
+    /* background-color: #eee; */
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.footerContainer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 100px;
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #000;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+/* FadeIn - animation */
+.stepContainer {
+    animation-name: fadeIn;
+    animation-duration: 300ms;
+    animation-iteration-count: initial;
+    animation-timing-function: ease;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* FadeOut */
+.stepContainer {
+    transition-property: background-color, opacity;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in;
+}
+.stepContainer.fadeOut {
+    background-color: white;
+    opacity: 0;
+}
+
+.skipButton {
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in;
+
+}
+.skipButton.fadeOut {
+    opacity: 0;
+}
+
+/* Button spinner */
+.button {
+    position: relative;
+
+    /* custom styling */
+    background-color: rgb(79, 79, 160);
+    color: white;
+    font-size: 16px;
+    border: 1px solid rgb(117, 117, 212);
+    box-shadow: 2px 2px 10px grey;
+    border-radius: 5px;
+    width: 100px;
+    height: 50px;   
+}
+.button.loading:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 100%;
+    border: 2px solid rgba(255, 255, 255, 0);
+    border-left-color: #FFF;
+    border-top-color: #FFF;
+    border-right-color: #FFF;
+    animation: spin 1s infinite linear;
+
+    /* adjust styling */
+    width: 16px;
+    height: 16px;
+    margin-left: -10px;
+    margin-top: -10px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
