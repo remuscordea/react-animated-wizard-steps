@@ -4,7 +4,7 @@ import { timeout } from "./utils.js";
 import "./WizardStyles.css";
 
 const Step2 = () => {
-  const { previousStep, nextStep, handleStep, isLoading } = useWizard();
+  const { nextStep, handleStep, isLoading } = useWizard();
   const [stepOut, setStepOut] = useState(false);
 
   handleStep(async () => {
@@ -42,9 +42,9 @@ const Step2 = () => {
       <div className="footerContainer">
         <button
           className={`button skipButton ${fadeOut}`}
-          onClick={() => previousStep()}
+          onClick={() => nextStep()}
         >
-          Previous
+          Skip
         </button>
         <button className={`button ${loading}`} onClick={() => nextStep()}>
           {!loading ? "Next" : ""}

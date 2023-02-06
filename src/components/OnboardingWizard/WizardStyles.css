@@ -38,9 +38,8 @@
     border-top: 1px solid #000;
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 30px;
 }
 
 /* FadeIn - animation */
