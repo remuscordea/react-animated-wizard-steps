@@ -1,7 +1,6 @@
 import React from "react";
 import { Wizard } from "react-use-wizard";
 import Header from "./Header";
-import Footer from "./Footer";
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
